@@ -1,0 +1,24 @@
+<md-card>
+	<md-card-title>
+		<p style="text-align: center;">Match {{indice + 1}}</p>
+	</md-card-title>
+    <md-card-content>
+    	<p>{{match.teamName1}}</p>
+    	<p>{{match.teamName2}}</p>
+    	<hr>
+		<form>
+			<md-select placeholder="Resultado" name="match">
+				<md-option [value]="match.teamName1" (onSelect)="setResult(match.teamName1)">
+					{{match.teamName1}}
+				</md-option>
+				<md-option [value]="'tie'" (onSelect)="setResult('tie')">
+					Tie
+				</md-option>
+				<md-option [value]="match.teamName2" (onSelect)="setResult(match.teamName2)">
+					{{match.teamName2}}
+				</md-option>				
+			</md-select>
+		</form>
+		<p class="date">Date: <span>{{match.date}}</span></p>
+    </md-card-content>
+</md-card>

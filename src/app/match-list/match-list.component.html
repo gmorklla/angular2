@@ -1,0 +1,9 @@
+<section>
+    <div *ngFor="let match of matches; let i = index">
+      <app-match-item [match]="match" [indice]="i" (resultSelected)="setResults($event)"></app-match-item>
+    </div>
+    <div class="actionsCard">
+      <button md-button class="save">Save</button>
+      <button md-button class="clear">Clear</button>
+    </div>
+</section>

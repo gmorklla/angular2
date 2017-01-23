@@ -1,0 +1,14 @@
+md-card hr {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: white;
+}
+
+.date {
+	font-size: 0.8em;
+	color: lightgrey;
+}
+
+form {
+	margin: 25px 0;
+}
