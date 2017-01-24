@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
@@ -10,6 +11,10 @@ import { MatchListComponent } from './match-list/match-list.component';
 
 import 'hammerjs';
 import { MatchItemComponent } from './match-item/match-item.component';
+import { AuthComponent } from './auth/auth.component';
+import { RegPollsComponent } from './reg-polls/reg-polls.component';
+import { ActivePollComponent } from './active-poll/active-poll.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -26,20 +31,31 @@ const myFirebaseAuthConfig = {
   scope: ['email']
 };
 
+const appRoutes: Routes = [
+  { path: 'inicio', component: ActivePollComponent },
+  { path: 'polls', component: RegPollsComponent },
+];
+
 @NgModule({
   declarations: [
     AppComponent,
     MatchListComponent,
-    MatchItemComponent
+    MatchItemComponent,
+    AuthComponent,
+    RegPollsComponent,
+    ActivePollComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
+    RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
   providers: [],
+  entryComponents: [AlertasComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
