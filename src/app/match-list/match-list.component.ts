@@ -26,7 +26,7 @@ export class MatchListComponent {
       if(auth) {
         this.fbData = auth.auth;
       } else {
-
+        this.fbData = undefined;
       }
     });
   }
@@ -37,6 +37,7 @@ export class MatchListComponent {
   }
 
   save() {
+    console.log(this.fbData);
     if(this.fbData == undefined) {
       console.log('Not log in');
       this.openDialog();
