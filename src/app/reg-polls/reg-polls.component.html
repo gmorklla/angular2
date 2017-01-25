@@ -1,3 +1,5 @@
-<p>
-	{{ nombre }}
-</p>
+<section>
+    <div *ngFor="let regPoll of regPolls">
+      <app-reg-polls-item [poll]="regPoll"></app-reg-polls-item>
+    </div>
+</section>

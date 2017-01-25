@@ -1,0 +1,28 @@
+<md-card>
+    <md-card-header>
+        <div md-card-avatar class="example-header-image"><img src="{{poll.foto}}" alt=""></div>
+        <md-card-title>{{poll.nombre}}</md-card-title>
+    </md-card-header>
+    <hr>
+    <md-card-content>
+        <table class="example-full-width" cellspacing="0" *ngFor="let match of matches; let i = index">
+            <tr>
+                <td>
+                    <md-input-container class="example-full-width">
+                        <input md-input value="{{match.teamName1}}" disabled [ngClass]="{redBorder: poll.resultados[i].result == match.teamName1}">
+                    </md-input-container>
+                </td>
+                <td>
+                    <md-input-container class="example-full-width">
+                        <input md-input value="tie" disabled [ngClass]="{redBorder: poll.resultados[i].result == 'tie'}">
+                    </md-input-container>                	
+                </td>
+                <td>
+                    <md-input-container class="example-full-width">
+                        <input md-input value="{{match.teamName2}}" disabled [ngClass]="{redBorder: poll.resultados[i].result == match.teamName2}">
+                    </md-input-container>
+                </td>
+            </tr>
+        </table>
+    </md-card-content>
+</md-card>

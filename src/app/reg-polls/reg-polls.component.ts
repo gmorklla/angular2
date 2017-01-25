@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {AngularFire, FirebaseObjectObservable} from 'angularfire2';
+import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 @Component({
   selector: 'app-reg-polls',
@@ -7,16 +7,22 @@ import {AngularFire, FirebaseObjectObservable} from 'angularfire2';
   styleUrls: ['./reg-polls.component.css']
 })
 export class RegPollsComponent {
-
-  item: FirebaseObjectObservable<any>;
-  nombre;
+  // Array of registered polls
+  regPolls;
+  items: FirebaseListObservable<any[]>;
 
   constructor(public af: AngularFire) {
   	this.af.auth.subscribe(auth => {
   		if(auth) {
-  			this.nombre = auth.auth.displayName;
-  		} else {
-  			this.nombre = 'Por favor inicia sesión.';
+        this.items = af.database.list('/polls', {
+          query: {
+            orderByKey: true
+          }
+        });
+        // subscribe to changes
+        this.items.subscribe(queriedItems => {          
+          this.regPolls = queriedItems;
+        }); 
   		}
   	});    
   }

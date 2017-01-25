@@ -1,0 +1,23 @@
+.example-header-image {
+	background-size: cover;
+	border-radius: 50px;
+	overflow: hidden;
+}
+
+.example-header-image img {
+	width: 100%;
+}
+
+md-card hr {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: white;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.redBorder {
+	color: tomato;
+}

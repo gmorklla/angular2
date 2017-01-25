@@ -16,7 +16,6 @@ export class MatchItemComponent implements OnInit {
 	@Output() resultSelected = new EventEmitter<Result>();
 
 	setResult(e) {
-		console.log(e, this.indice);
 		this.resultSelected.emit(new Result(e, this.indice));
 	}
 

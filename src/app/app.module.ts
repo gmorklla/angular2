@@ -6,15 +6,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
+import 'hammerjs';
+import { AlertService } from './alertas/alert-s.service';
+import { MatchesService } from './matches.service';
+
 import { AppComponent } from './app.component';
 import { MatchListComponent } from './match-list/match-list.component';
-
-import 'hammerjs';
 import { MatchItemComponent } from './match-item/match-item.component';
 import { AuthComponent } from './auth/auth.component';
 import { RegPollsComponent } from './reg-polls/reg-polls.component';
 import { ActivePollComponent } from './active-poll/active-poll.component';
 import { AlertasComponent } from './alertas/alertas.component';
+import { RegPollsItemComponent } from './reg-polls/reg-polls-item/reg-polls-item.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -44,7 +47,8 @@ const appRoutes: Routes = [
     AuthComponent,
     RegPollsComponent,
     ActivePollComponent,
-    AlertasComponent
+    AlertasComponent,
+    RegPollsItemComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
-  providers: [],
+  providers: [ AlertService, MatchesService ],
   entryComponents: [AlertasComponent],
   bootstrap: [AppComponent]
 })
