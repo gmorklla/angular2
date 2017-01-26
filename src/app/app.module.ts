@@ -37,6 +37,10 @@ const myFirebaseAuthConfig = {
 const appRoutes: Routes = [
   { path: 'inicio', component: ActivePollComponent },
   { path: 'polls', component: RegPollsComponent },
+  { path: '',
+    redirectTo: '/inicio',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
