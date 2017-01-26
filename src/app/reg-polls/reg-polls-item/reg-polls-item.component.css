@@ -21,3 +21,7 @@ md-card hr {
 .redBorder {
 	color: tomato;
 }
+
+input, p {
+	text-align: center;
+}

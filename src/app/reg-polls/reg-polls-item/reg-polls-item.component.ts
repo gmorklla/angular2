@@ -13,7 +13,7 @@ export class RegPollsItemComponent {
 	matches: Match[];
 
   constructor(private matchesService: MatchesService) {
-  	this.matches = matchesService.getMatches();
+  	matchesService.getMatches().then(matches => this.matches = matches);
   }
 
 }

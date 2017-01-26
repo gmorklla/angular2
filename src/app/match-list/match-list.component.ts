@@ -28,7 +28,7 @@ export class MatchListComponent {
   items: FirebaseListObservable<any[]>;
 
   constructor(public af: AngularFire, public dialog: MdDialog, private alert: AlertService, private matchesService: MatchesService) {
-    this.matches = matchesService.getMatches();
+    matchesService.getMatches().then(matches => this.matches = matches);
     // Check for user auth
     this.af.auth.subscribe(auth => {
       // If the user have log in

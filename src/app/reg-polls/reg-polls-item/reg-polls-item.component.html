@@ -8,16 +8,19 @@
         <table class="example-full-width" cellspacing="0" *ngFor="let match of matches; let i = index">
             <tr>
                 <td>
+                    <p><img src="assets/img/{{match.teamName1}}.png" alt=""></p>
                     <md-input-container class="example-full-width">
                         <input md-input value="{{match.teamName1}}" disabled [ngClass]="{redBorder: poll.resultados[i].result == match.teamName1}">
                     </md-input-container>
                 </td>
                 <td>
+                    <p><img src="assets/img/vs.png" alt=""></p>
                     <md-input-container class="example-full-width">
-                        <input md-input value="tie" disabled [ngClass]="{redBorder: poll.resultados[i].result == 'tie'}">
+                        <input md-input value="Empate" disabled [ngClass]="{redBorder: poll.resultados[i].result == 'empate'}">
                     </md-input-container>                	
                 </td>
                 <td>
+                    <p><img src="assets/img/{{match.teamName2}}.png" alt=""></p>
                     <md-input-container class="example-full-width">
                         <input md-input value="{{match.teamName2}}" disabled [ngClass]="{redBorder: poll.resultados[i].result == match.teamName2}">
                     </md-input-container>
