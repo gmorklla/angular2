@@ -43,9 +43,12 @@ export class MatchesService {
 
 		this.items = af.database.list('/matches');
         // subscribe to changes
-        this.items.subscribe(queriedItems => {
-        	this.prepareMatchesList(queriedItems);        	
-        });
+        this.items.subscribe(
+        	queriedItems => { 
+        		console.log('queried');
+        		this.prepareMatchesList(queriedItems);
+        	}
+        );
 	}
 
 	getMatches(): Promise<Match[]> {

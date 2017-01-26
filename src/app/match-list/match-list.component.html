@@ -1,4 +1,5 @@
 <section>
+	<!-- <md-progress-bar *ngIf="loading == true" mode="indeterminate"></md-progress-bar> -->
     <div *ngFor="let match of matches; let i = index">
       <app-match-item [match]="match" [indice]="i" (resultSelected)="setResults($event)"></app-match-item>
     </div>
