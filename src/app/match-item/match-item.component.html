@@ -3,8 +3,25 @@
 		<p style="text-align: center;">Partido {{indice + 1}}</p>
 	</md-card-title>
     <md-card-content>
-    	<p><img src="assets/img/{{match.teamName1}}.png" alt="">{{match.teamName1}}</p>
-    	<p><img src="assets/img/{{match.teamName2}}.png" alt="">{{match.teamName2}}</p>
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td>
+                    <p><img src="assets/img/{{match.teamName1}}.png" alt=""></p>
+                    <md-input-container class="example-full-width">
+                        <input md-input value="{{match.teamName1}}" disabled>
+                    </md-input-container>
+                </td>
+                <td>
+                    <p><img src="assets/img/vs.png" alt=""></p>             	
+                </td>
+                <td>
+                    <p><img src="assets/img/{{match.teamName2}}.png" alt=""></p>
+                    <md-input-container class="example-full-width">
+                        <input md-input value="{{match.teamName2}}" disabled>
+                    </md-input-container>
+                </td>
+            </tr>
+        </table>
     	<hr>
 		<form>
 			<md-select placeholder="Resultado" name="match">
