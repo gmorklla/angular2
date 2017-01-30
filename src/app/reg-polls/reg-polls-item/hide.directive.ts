@@ -1,4 +1,4 @@
-import { Directive, HostListener, HostBinding, ElementRef } from '@angular/core';
+import { Directive, HostListener, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[appHide]'
@@ -8,7 +8,7 @@ export class HideDirective {
 
 	constructor(private el: ElementRef) { }
 
-	@HostBinding('class.hide') hidding: boolean = true;
+	hidding: boolean = true;
 
 	@HostListener('click', ['$event.target']) onClick(btn) {
 		this.hidding = !this.hidding;
