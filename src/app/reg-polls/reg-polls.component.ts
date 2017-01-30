@@ -27,4 +27,9 @@ export class RegPollsComponent {
   	});    
   }
 
+  printPage() {
+    console.log('Print');
+    window.print();
+  }
+
 }

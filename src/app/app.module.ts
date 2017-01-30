@@ -18,6 +18,7 @@ import { RegPollsComponent } from './reg-polls/reg-polls.component';
 import { ActivePollComponent } from './active-poll/active-poll.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { RegPollsItemComponent } from './reg-polls/reg-polls-item/reg-polls-item.component';
+import { HideDirective } from './reg-polls/reg-polls-item/hide.directive';
 
 // Must export the config
 export const firebaseConfig = {
@@ -52,7 +53,8 @@ const appRoutes: Routes = [
     RegPollsComponent,
     ActivePollComponent,
     AlertasComponent,
-    RegPollsItemComponent
+    RegPollsItemComponent,
+    HideDirective
   ],
   imports: [
     BrowserModule,

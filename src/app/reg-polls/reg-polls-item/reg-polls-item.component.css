@@ -25,3 +25,12 @@ md-card hr {
 input, p {
 	text-align: center;
 }
+
+a {
+	position: absolute;
+    right: 15px;
+}
+
+md-card-content {
+	display: none;
+}
